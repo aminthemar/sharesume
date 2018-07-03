@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br>
+
+<div class="container">
+    <a href='/docs'>
+        <li class="list-group-item" style="background-color: rgb(47, 104, 151);">
+            <div>
+                <h4 class="my-8" style="color: #ffd43b"> ساختار سایت • </h4>
+            </div>
+        </li>
+    </a>
+    <br>
+</div>
+
+<div class="jumbotron" style="background-color:rgb(57, 125, 146);">
+    <div class="container">
+        <pre style="color:lightgrey; background-color: rgb(57, 130, 146); border-width: 1px; border-color:rgb(150, 150, 150); border-radius: 5px; border-style:solid"><code><div dir="auto" align="left" style="margin: 3%">{{SOURCE}}</div></code></pre>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>اشتراک رزومه</title>
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css">
+    <style>
+        input[type=submit]{background-color: rgb(13, 68, 78); border: none; color: rgb(223, 223, 223); width: 408; height: 45px; border-radius: 7px}
+            input[type=text]{width: 300px; height: 25px; background-color: rgb(168, 217, 230); border: none; border-radius: 7px}
+            input[type=password]{width: 300px; height: 25px; background-color: rgb(168, 217, 230); border: none; border-radius: 7px}
+            body{
+                color: rgb(228, 228, 228)
+            }
+            input::-webkit- {
+                font-size: 13px;
+                font-style: italic
+            }
+            textarea {
+                resize: none;
+                width: inherit;
+                height: 35ex;
+                padding: 1%;
+            }
+            a:link {
+                color:currentColor;
+            }
+            a:visited {
+                color: currentColor;
+            }
+            .container2 
+            {
+            width:inherit;
+            height:90px;
+            }
+            .tempLeft
+            {
+            width:50%;
+            float:left;
+            }
+            .tempRight
+            {
+            width:50%;
+            float:right;
+            }
+    </style>
+</head>
+
+<body style="background-color:rgb(33, 51, 58);">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">ShaResumé</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarsExample07">
+                <ul class="navbar-nav mr-auto">
+
+                    {% if login == true %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">خروج</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/panel">پنل من</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">عضویت</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">ورود</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">خانه</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    {% block body %}{% endblock %}
+
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

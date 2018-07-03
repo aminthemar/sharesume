@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="jumbotron" style="background-color:rgb(57, 125, 146);">
+    <div class="container">
+        <p>
+            <h4>{{ROW[2]}}</h4>
+        </p>
+        <p style="color: rgb(197, 197, 197)" dir="rtl">• {{ROW[0]}} {{ROW[1]}}</p>
+        <div dir="rtl">
+            <li class="list-group-item" style="background-color: rgb(57, 130, 146); line-height: 30px; word-wrap:break-word; white-space:pre-wrap; border-radius: 5px">{{ROW[3]}}</li>
+        </div>
+        {% if PRIVILAGE == true %}
+        <br>
+        <form action="/edit/{{ROW[4]}}" method="post" class="container" align="left">
+            <h5><input type="submit" value="ویرایش رزومه" /></h5>
+        </form>
+        <form action="/delete/{{ROW[4]}}" method="post" class="container" align="left">
+            <h5><input type="submit" style="background-color: rgb(155, 68, 87)" value="حذف رزومه" /></h5>
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+    <p align="right">
+        <h5 class="my-8"> نظرات </h5>
+    </p>
+</div>
+<div class="container">
+    <div class="jumbotron" style="background-color:rgb(57, 125, 146);">
+        <form action="/sendComment/{{ROW[4]}}" method="post" class="container">
+            <input type="text" name="cmt_body" placeholder=" نظر بدهید . . . " dir="rtl" style="width: inherit;">
+        </form>
+        {% for thing in CMT %}
+        <li class="list-group-item" style="background-color: rgb(57, 130, 146);">
+            <div>
+                <p style="color: rgb(197, 197, 197)" dir="rtl">توسط {{thing[0]}} در {{thing[1]}}</p>
+                <h6 class="my-8" dir="rtl"> {{thing[2]}} </h6>
+            </div>
+        </li>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

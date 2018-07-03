@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br>
+<div class="container">
+    <div class="jumbotron" style="background-color:rgb(52, 123, 141);">
+        <form action="/updateDocs" method="post" class="container">
+            <h3 align="center">ویرایش سند</h3>
+            <br>
+            <textarea name="docBody" dir="rtl" placeholder=" متن کامل . . . " style="background-color: rgb(168, 217, 230); border-radius: 7px; height:550px;">{{DOCUMENT}}</textarea>
+            <p><br></p>
+            <h5 align="left"><input type="submit" value="ثبت" /></h5>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

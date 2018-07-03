@@ -1,0 +1,41 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="jumbotron" align="center" style="background-color:rgb(57, 125, 146);">
+    <h1>به شِرزومه خوش آمدید <a style="color:rgb(174, 255, 134);" href="/panel">{{FULL_NAME}}</a></h1>
+    <br>
+    <p class="lead">رزومه ی خود را اشتراک گذاری کرده و اسناد دیگران را مشاهده کنید</p>
+</div>
+
+<div class="container">
+    <p align="right">
+        <h5 class="my-8"> مستندات </h5>
+    </p>
+    <a href='/docs'>
+        <li class="list-group-item" style="background-color: rgb(146, 57, 87);">
+            <div>
+                <h4 class="my-8"> ساختار و کد وبسایت • </h4>
+                <p style="color: rgb(197, 197, 197)" dir="rtl">توسط محمدامین رشید</p>
+            </div>
+        </li>
+    </a>
+</div>
+<p><br></p>
+<div class="container">
+    <p align="right">
+        <h5 class="my-8"> رزومه‌های اخیر </h5>
+    </p>
+</div>
+
+<div class="container">
+    {% for thing in ROWS %}
+    <a href='/resumes/{{thing[4]}}'>
+        <li class="list-group-item" style="background-color: rgb(57, 130, 146);">
+            <div>
+                <h4 class="my-8"> {{thing[2]}} • </h4>
+                <p style="color: rgb(197, 197, 197)" dir="rtl">توسط {{thing[0]}} {{thing[1]}} در تاریخ {{thing[3]}}</p>
+            </div>
+        </li>
+    </a>
+    <br> {% endfor %}
+</div>
+
+{% endblock %}

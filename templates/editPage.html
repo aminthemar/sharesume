@@ -1,0 +1,19 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br>
+<div class="container">
+    <div class="jumbotron" style="background-color:rgb(52, 123, 141);">
+        <form action="/update/{{ROW[2]}}" method="post" class="container">
+            <h3 align="center">ویرایش رزومه</h3>
+            <h6>عنوان</h6>
+            <input type="text" name="title" dir="rtl" placeholder=" چکیده‌ی دستاوردها . . . " value="{{ROW[0]}}">
+            <p></p>
+            <h6>رزومه</h6>
+            <textarea name="body" dir="rtl" placeholder=" متن کامل . . . " style="background-color: rgb(168, 217, 230); border-radius: 7px">{{ROW[1]}}</textarea>
+            <p><br></p>
+            <h5 align="left"><input type="submit" value="ثبت" /></h5>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

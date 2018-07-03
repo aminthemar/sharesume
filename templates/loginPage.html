@@ -1,0 +1,13 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="jumbotron" align="center" style="background-color:rgb(57, 125, 146);">
+    <h6 style="color:rgb(255, 134, 180);">{{WRONG_ERR}}</h6>
+    <h6 style="color:rgb(255, 134, 180);">{{EMPTY_ERR}}</h6>
+    <br>
+    <form action="/enter" method="post" class="container">
+        <p><input type="text" name="un" /> ........ نام کاربری</p>
+        <p><input type="password" name="pw" /> ............ رمزعبور</p>
+        <br>
+        <h5><input type="submit" value="ثبت" /></h5>
+    </form>
+</div>
+{% endblock %}

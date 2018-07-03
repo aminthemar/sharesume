@@ -1,0 +1,39 @@
+{% extends 'layout.html' %} {% block body %}
+
+<br>
+
+<div class="container">
+    <a href='/sourceCode'>
+        <li class="list-group-item" style="background-color: rgb(47, 104, 151);">
+            <div>
+                <h4 class="my-8" style="color: #ffd43b"> سورس کد پایتون • </h4>
+            </div>
+        </li>
+    </a>
+    <br>
+</div>
+
+<div class="jumbotron" style="background-color:rgb(57, 125, 146);">
+    <div class="container">
+        <div class="container2">
+            <div class="tempRight">
+                <h4>پروژه‌ی طراحی سایت با استفاده از فلاسک</h4>
+                <p style="color: rgb(197, 197, 197)" dir="rtl">• محمدامین رشید</p>
+            </div>
+            <div class="tempLeft">
+                <a href="/editDocs">
+                    <div align="left">
+                        <li class="list-group-item" style="border-radius: 8px; text-align:center; background-color: rgb(13, 68, 78); height: 50px; width: 280px">
+                            <p>ویرایش</p>
+                        </li>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <li class="list-group-item" style="text-align:justify; background-color: rgb(57, 130, 146); line-height: 30px; word-wrap:break-word; white-space:pre-wrap; border-radius: 5px">
+            <div dir="auto" style="margin-right: 35px; margin-left: 35px;">{{doc_body}}</div>
+        </li>
+    </div>
+</div>
+
+{% endblock %}

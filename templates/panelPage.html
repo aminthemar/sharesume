@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} {% block body %}
+<br>
+<div class="container">
+    <div class="jumbotron" style="background-color:rgb(52, 123, 141);">
+        {% if RESUME == false %}
+        <form action="/submit" method="post" class="container">
+            <h3 align="center">ثبت رزومه</h3>
+            <h6 style="color:rgb(255, 134, 180);">{{EMPTY_ERR}}</h6>
+            <h6>عنوان</h6>
+            <input type="text" name="title" dir="rtl" placeholder=" چکیده‌ی دستاوردها . . . ">
+            <p></p>
+            <h6>رزومه</h6>
+            <textarea name="body" dir="rtl" placeholder=" متن کامل . . . " style="background-color: rgb(168, 217, 230); border-radius: 7px"></textarea>
+            <p><br></p>
+            <h5 align="left"><input type="submit" value="ثبت" /></h5>
+        </form>
+        {% else %}
+        <form action="/delete/{{USER}}" method="post" class="container">
+            <h4 style="text-align:center; color:rgb(174, 255, 134);"> رزومه شما ثبت شده است</h4>
+            <br>
+            <h5 style="text-align:center"><input type="submit" value="حذف" /></h5>
+        </form>
+        {% endif %}
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron" align="center" style="background-color:rgb(52, 123, 141);">
+        <form action="/password" method="post" class="container">
+            <h3 align="center">تغییر رمزعبور</h3>
+            <p></p>
+            <h6 style="color:rgb(255, 134, 180);">{{WRONG_PASS}}</h6>
+            <br>
+            <p><input type="text" name="old" /> رمزعبور فعلی</p>
+            <br>
+            <p><input type="password" name="new" /> ..رمزعبور جدید </p>
+            <p><input type="password" name="renew" /> ..تکرار رمزعبور </p>
+            <br>
+            <h5><input type="submit" value="ثبت" /></h5>
+        </form>
+    </div>
+</div>
+<br> {% endblock %}
