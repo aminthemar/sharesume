@@ -1,1 +1,1 @@
-web: gunicorn sharesume:site
+web: gunicorn site:GetHome
