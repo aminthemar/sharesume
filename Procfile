@@ -1,1 +1,1 @@
-web: gunicorn sharesume.wsgi
+web: gunicorn sharesume:site
