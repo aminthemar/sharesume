@@ -1,1 +1,1 @@
-web: gunicorn sharesume.wsgi:application --log-file -
+web: gunicorn sharesume.wsgi
